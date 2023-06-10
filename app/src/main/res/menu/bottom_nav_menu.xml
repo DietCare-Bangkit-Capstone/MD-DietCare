@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/bnmHome"
+        android:icon="@drawable/ic_home"
+        android:title="Beranda" />
+
+    <item
+        android:id="@+id/bnmHistory"
+        android:icon="@drawable/ic_history"
+        android:title="Histori" />
+
+    <item
+        android:id="@+id/bnmMeal"
+        android:icon="@drawable/ic_meal"
+        android:title="Makan" />
+
+
+    <item
+        android:id="@+id/bnmProgress"
+        android:icon="@drawable/ic_progress"
+        android:title="Progres" />
+
+    <item
+        android:id="@+id/bnmProfile"
+        android:icon="@drawable/ic_profile_pic"
+        android:title="Profil" />
+
+
+</menu>

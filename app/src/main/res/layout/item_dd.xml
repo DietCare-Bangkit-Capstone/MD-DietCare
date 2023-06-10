@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/dropdown"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Dropdown item"
+    android:padding="10dp"
+    android:maxLines="3"
+    android:ellipsize="end"
+    android:fontFamily="@font/nunito_medium"/>

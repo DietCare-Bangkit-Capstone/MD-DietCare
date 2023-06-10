@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "269258498280",
+    "project_id": "dietcare-78c1b",
+    "storage_bucket": "dietcare-78c1b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:269258498280:android:c6ce5b2851c086b185a95d",
+        "android_client_info": {
+          "package_name": "com.capstone.dietcare"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "269258498280-nkpd7a2fg6fbk889nuugb10gnk54cgc4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_WAr5Xta1xAGWlIIynZJlUoDK3aikvYQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "269258498280-nkpd7a2fg6fbk889nuugb10gnk54cgc4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

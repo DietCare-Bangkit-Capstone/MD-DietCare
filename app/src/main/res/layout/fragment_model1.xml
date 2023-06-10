@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".meal.Model1Fragment"
+    android:padding="16dp">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvTitleWeightModel1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunito_bold"
+                android:text="Berat Badan"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilWeightModel1"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvTitleWeightModel1"
+                android:layout_marginTop="8dp">
+                <EditText
+                    android:id="@+id/edtWeight"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal"
+                    android:hint="dalam Kg"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/tvTitleDietTypeModel1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunito_bold"
+                android:text="Tipe Diet"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tilWeightModel1"
+                android:layout_marginTop="20dp"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilDdDietTypeModel1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvTitleDietTypeModel1"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+                <AutoCompleteTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="Masukkan level diet"
+                    android:inputType="none"
+                    android:id="@+id/ddDietTypeModel1"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/tvTitleDailyActivity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunito_bold"
+                android:text="Aktivitas Harian"
+                android:textSize="24sp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tilDdDietTypeModel1" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilDdDailyActivityModel1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvTitleDailyActivity"
+                android:layout_marginTop="7dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+                <AutoCompleteTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/ddDailyActivityModel1"
+                    android:inputType="none"
+                    android:hint="Masukkan aktivitas harian" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <TextView
+                android:id="@+id/tvTitleMealModel1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunito_bold"
+                android:text="Mau makan berapa kali hari ini?"
+                android:textSize="24sp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tilDdDailyActivityModel1" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilDdMealModel1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvTitleMealModel1"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+
+                <AutoCompleteTextView
+                    android:id="@+id/ddMealModel1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="Masukkan banyak porsi"
+                    android:inputType="none"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/tvFindRecipeModel1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Yuk, mari makan!"
+                android:gravity="center"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tilDdMealModel1"
+                android:layout_marginTop="24dp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnFindRecipeModel1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:layout_margin="10dp"
+                android:fontFamily="@font/nunito_extra_bold"
+                android:text="Cari Resep Diet"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvFindRecipeModel1"
+                android:backgroundTint="?attr/colorSecondary"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</FrameLayout>
