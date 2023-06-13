@@ -11,6 +11,7 @@ import com.capstone.dietcare.data.helper.DateHelper.withDateFormat
 import com.capstone.dietcare.data.user.DataUser
 import com.capstone.dietcare.databinding.ItemHistoryBinding
 import com.capstone.dietcare.detail.DetailActivity
+import com.capstone.dietcare.detail.DetailParcel
 
 class HistoryAdapter(private val listHistory: List<DataUser>): RecyclerView.Adapter<HistoryAdapter.HistoryViewHolder>() {
     class HistoryViewHolder (private val binding: ItemHistoryBinding): RecyclerView.ViewHolder(binding.root){
@@ -91,27 +92,54 @@ class HistoryAdapter(private val listHistory: List<DataUser>): RecyclerView.Adap
 
             binding.cvItem1History.setOnClickListener {
                 val intent = Intent(itemView.context, DetailActivity::class.java)
-                intent.putExtra("RECIPENAME", history.m1name)
+                val recipeIntent = DetailParcel(
+                    history.m1name!!,
+                    history.m1cal!!
+                )
+                intent.putExtra("RECIPE_INTENT", recipeIntent)
                 itemView.context.startActivity(intent)
             }
             binding.cvItem2History.setOnClickListener {
                 val intent = Intent(itemView.context, DetailActivity::class.java)
-                intent.putExtra("RECIPENAME", history.m2name)
+                val recipeIntent = DetailParcel(
+                    history.m2name!!,
+                    history.m2cal!!
+                )
+                intent.putExtra("RECIPE_INTENT", recipeIntent)
                 itemView.context.startActivity(intent)
             }
             binding.cvItem3History.setOnClickListener {
                 val intent = Intent(itemView.context, DetailActivity::class.java)
-                intent.putExtra("RECIPENAME", history.m3name)
+                val recipeIntent = DetailParcel(
+                    history.m3name!!,
+                    history.m3cal!!
+                )
+                intent.putExtra("RECIPE_INTENT", recipeIntent)
                 itemView.context.startActivity(intent)
             }
             binding.cvItem4History.setOnClickListener {
                 val intent = Intent(itemView.context, DetailActivity::class.java)
-                intent.putExtra("RECIPENAME", history.m4name)
+                val recipeIntent = DetailParcel(
+                    history.m4name!!,
+                    history.m4cal!!
+                )
+                intent.putExtra("RECIPE_INTENT", recipeIntent)
                 itemView.context.startActivity(intent)
             }
             binding.cvItem5History.setOnClickListener {
                 val intent = Intent(itemView.context, DetailActivity::class.java)
-                intent.putExtra("RECIPENAME", history.m5name)
+                val recipeIntent = DetailParcel(
+                    history.m5name!!,
+                    history.m5cal!!
+                )
+                intent.putExtra("RECIPE_INTENT", recipeIntent)
+                itemView.context.startActivity(intent)
+            }
+            binding.icDeleteHistory.setOnClickListener{
+                val intent = Intent(itemView.context, HistoryActivity::class.java)
+                val deleteIntent = history.id
+                intent.putExtra("DELETE_INTENT", deleteIntent)
+                intent.flags = Intent.FLAG_ACTIVITY_NO_ANIMATION
                 itemView.context.startActivity(intent)
             }
         }

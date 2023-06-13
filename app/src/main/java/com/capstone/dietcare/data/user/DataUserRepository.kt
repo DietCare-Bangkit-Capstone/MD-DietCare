@@ -25,6 +25,16 @@ class DataUserRepository (context: Context){
 
     fun getAllMeal(): LiveData<List<DataUser>> = mDataUserDao.getAllMeal()
 
+    fun getAllCalData(): LiveData<List<DataUser>> = mDataUserDao.getAllCalData()
+
+    fun delete(id: Int){
+        executorService.execute { mDataUserDao.delete(id) }
+    }
+
+    fun getLatestBodyWeight(): LiveData<DataUser> = mDataUserDao.getLatestBodyWeight()
+
+    fun getAllBodyWeight(): LiveData<List<DataUser>> = mDataUserDao.getAllBodyWeight()
+
     fun updateMeal1(m1name: String, m1img: String, m1cal: Double, m1time:String, m1port:Double){
         executorService.execute { mDataUserDao.updateMeal1(m1name, m1img, m1cal, m1time, m1port) }
         Log.d("updateMeal", "kepanggil")

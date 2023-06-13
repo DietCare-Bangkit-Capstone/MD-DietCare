@@ -10,6 +10,8 @@ import com.capstone.dietcare.data.helper.ViewModelFactory
 import com.capstone.dietcare.databinding.ActivityHistoryBinding
 import com.capstone.dietcare.main.MainActivity
 import com.capstone.dietcare.meal.MealActivity
+import com.capstone.dietcare.profile.ProfileActivity
+import com.capstone.dietcare.progress.ProgressActivity
 
 class HistoryActivity : AppCompatActivity() {
 
@@ -26,6 +28,19 @@ class HistoryActivity : AppCompatActivity() {
 
         bottomNav()
         setViewModel()
+        setDelete()
+    }
+
+    private fun setDelete() {
+        val idIntent = intent.getIntExtra("DELETE_INTENT", 0)
+        historyViewModel.delete(idIntent)
+        historyViewModel.getAllHistory().observe(this){history ->
+            binding.rvHistory.adapter = HistoryAdapter(history)
+            binding.rvHistory.setHasFixedSize(true)
+            binding.rvHistory.layoutManager = LinearLayoutManager(this)
+
+        }
+
     }
 
     private fun setViewModel() {
@@ -61,11 +76,19 @@ class HistoryActivity : AppCompatActivity() {
                 }
 
                 R.id.bnmProgress -> {
-
+                    val intent = Intent(this, ProgressActivity::class.java)
+                    intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
+                    intent.flags = Intent.FLAG_ACTIVITY_NO_ANIMATION
+                    startActivity(intent)
+                    finish()
                 }
 
                 R.id.bnmProfile -> {
-
+                    val intent = Intent(this, ProfileActivity::class.java)
+                    intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
+                    intent.flags = Intent.FLAG_ACTIVITY_NO_ANIMATION
+                    startActivity(intent)
+                    finish()
                 }
             }
             true

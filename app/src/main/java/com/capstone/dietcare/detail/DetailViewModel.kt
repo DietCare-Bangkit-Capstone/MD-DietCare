@@ -38,7 +38,7 @@ class DetailViewModel(context: Context): ViewModel() {
         mFavoriteDataRepository.delete(data)
     }
 
-    fun postDetail(body: JsonObject){
+    fun postDetail(body: JsonObject, name: String, cal: Double){
         _isLoading.value =true
         val client = MLConfig.getApiService().postSearch(body)
         client.enqueue(object : Callback<MLModel1Response> {
@@ -49,7 +49,11 @@ class DetailViewModel(context: Context): ViewModel() {
                 _isLoading.value = false
                 if (response.isSuccessful) {
                     if (response.body()?.data?.size != 0 && response.body()?.data?.get(0) != null) {
-                        _itemSearch.value = response.body()?.data?.get(0)
+                        for (i in 0..response.body()?.data?.size!!.minus(1)){
+                            if (response.body()?.data?.get(i)!!.name == name && response.body()?.data?.get(i)!!.calories == cal){
+                                _itemSearch.value = response.body()?.data?.get(i)
+                            }
+                        }
                     } else {
                         Log.e("MainViewModel", "Error getting detail: index search data = 0 or data[0] is null")
                         _snackbarError.value = Event("Error getting detail: index search data = 0 or data[0] is null")

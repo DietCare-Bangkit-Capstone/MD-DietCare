@@ -11,4 +11,8 @@ class HistoryViewModel (context: Context):ViewModel(){
     private val mDataUserRepository: DataUserRepository = DataUserRepository(context)
 
     fun getAllHistory() : LiveData<List<DataUser>> = mDataUserRepository.getAllMeal()
+
+    fun delete(id: Int) {
+        mDataUserRepository.delete(id)
+    }
 }

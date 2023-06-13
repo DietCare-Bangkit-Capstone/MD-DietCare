@@ -20,7 +20,7 @@ class RecPagerAdapter(private val recItem : List<DataItem>): RecyclerView.Adapte
             binding.tvPortionItemRecipe.text = data.recipeServings.toString().removeSuffix(".0") + " portion"
             Glide.with(binding.ivItemRecipe).load(image).into(binding.ivItemRecipe)
 
-            val ingredientArray = data.recipeIngredientParts?.removePrefix("\"")?.removeSuffix("\"")?.split("\", \"")?.toTypedArray()
+            val ingredientArray = data.recipeIngredientParts?.removePrefix("\"")?.removeSuffix("\"")?.removeSuffix("\"")?.replace("\", \n\"", "\", \"")?.split("\", \"")?.toTypedArray()
             if (ingredientArray != null) {
                 var tidyIngridient = ""
                 for (part : String in ingredientArray){
@@ -29,7 +29,7 @@ class RecPagerAdapter(private val recItem : List<DataItem>): RecyclerView.Adapte
                 binding.tvIngridientsItemRecipe.text = tidyIngridient
             }
 
-            val stepArray = data.recipeInstructions?.removeSuffix(")")?.removePrefix("\"")?.removeSuffix("\"")?.split("\", \"")?.toTypedArray()
+            val stepArray = data.recipeInstructions?.removeSuffix(")")?.removePrefix("\"")?.removeSuffix("\"")?.removeSuffix("\"\n")?.replace("\", \n\"", "\", \"")?.split("\", \"")?.toTypedArray()
             if (stepArray != null){
                 var tidyStep = ""
                 for (i in 1..stepArray.size){

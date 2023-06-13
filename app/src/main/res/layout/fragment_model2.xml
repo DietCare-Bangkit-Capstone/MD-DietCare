@@ -224,8 +224,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/nunito_bold"
-                android:text="Mau makan berapa kali hari ini?"
-                android:textSize="20sp"
+                android:text="How many times do you eat for today?"
+                android:textSize="18sp"
                 android:layout_marginTop="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -244,7 +244,7 @@
                     android:id="@+id/ddMealModel2"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:hint="Masukkan banyak porsi"
+                    android:hint="Enter the number of today's meal plan"
                     android:inputType="none"/>
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -252,7 +252,7 @@
                 android:id="@+id/tvFindRecipeModel2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Yuk, mari makan!"
+                android:text="Come on, let's eat!"
                 android:gravity="center"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -267,7 +267,7 @@
                 android:textSize="15sp"
                 android:layout_margin="10dp"
                 android:fontFamily="@font/nunito_extra_bold"
-                android:text="Cari Resep Diet"
+                android:text="Find Diet Recipes"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"

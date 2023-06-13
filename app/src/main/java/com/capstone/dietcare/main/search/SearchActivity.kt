@@ -61,6 +61,7 @@ class SearchActivity : AppCompatActivity() {
             override fun onQueryTextSubmit(query: String): Boolean {
                 val intent = Intent(this@SearchActivity, SearchActivity::class.java)
                 intent.putExtra("SEARCHITEM", query)
+                intent.flags = Intent.FLAG_ACTIVITY_NO_ANIMATION
                 startActivity(intent)
                 searchView.clearFocus()
                 return true
@@ -76,8 +77,9 @@ class SearchActivity : AppCompatActivity() {
     private fun setupInitial() {
         val query = intent.getStringExtra("SEARCHITEM")
         if (query!= null){
+            binding.search.setQuery(query, false)
             val searchItem = JsonObject()
-            searchItem.addProperty("Name", query)
+            searchItem.addProperty("Name", query.replace("(", "\\(").replace(")", "\\)"))
             mainViewModel.postSearch(searchItem)
             mainViewModel.listSearch.observe(this){
                 setItemSearch(it)

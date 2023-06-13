@@ -14,6 +14,7 @@ import com.capstone.dietcare.data.user.DataUser
 import com.capstone.dietcare.databinding.FragmentModel2Binding
 import com.capstone.dietcare.data.helper.ViewModelFactory
 import com.capstone.dietcare.recommendation.RecommendationActivity
+import java.util.*
 
 
 class Model2Fragment : Fragment() {
@@ -38,11 +39,12 @@ class Model2Fragment : Fragment() {
 
         binding.btnFindRecipeModel2.setOnClickListener {
             when {
-                binding.ddMealModel2.text.toString().isNullOrEmpty() -> binding.ddMealModel2.error = "Masukkan jumlah porsi hari ini"
+                binding.ddMealModel2.text.toString().isNullOrEmpty() -> binding.ddMealModel2.error = "Enter the number of servings for the day"
                 else -> {
                     val data = DataUser()
                     data.let {
                         it.date = DateHelper.getCurrentDate()
+                        it.ms = Date().time
                         it.meal = binding.ddMealModel2.text.toString().toInt()
                         it.calor = binding.sldCaloriesModel2.value.toDouble()
                         it.fat = binding.sldFatModel2.value.toDouble()

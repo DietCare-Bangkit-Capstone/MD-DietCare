@@ -1,42 +1,32 @@
-package com.capstone.dietcare.meal
+package com.capstone.dietcare.profile
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.annotation.StringRes
-import com.capstone.dietcare.main.MainActivity
 import com.capstone.dietcare.R
-import com.capstone.dietcare.databinding.ActivityMealBinding
+import com.capstone.dietcare.databinding.ActivityProfileBinding
 import com.capstone.dietcare.history.HistoryActivity
-import com.capstone.dietcare.profile.ProfileActivity
+import com.capstone.dietcare.main.MainActivity
+import com.capstone.dietcare.meal.MealActivity
 import com.capstone.dietcare.progress.ProgressActivity
-import com.google.android.material.tabs.TabLayoutMediator
 
-class MealActivity : AppCompatActivity() {
+class ProfileActivity : AppCompatActivity() {
 
-    private lateinit var binding:ActivityMealBinding
+    private lateinit var binding: ActivityProfileBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMealBinding.inflate(layoutInflater)
+        binding = ActivityProfileBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        supportActionBar?.title = "Profile"
 
-        setTabs()
+
+
         bottomNav()
     }
 
-    private fun setTabs() {
-        val sectionsPagerAdapter = MealSectionsPagerAdapter(this)
-        binding.pagerMeal.adapter = sectionsPagerAdapter
-        TabLayoutMediator(binding.tabMeal, binding.pagerMeal) { tab, position ->
-            tab.text = resources.getString(TAB_TITLES[position])
-        }.attach()
-        supportActionBar?.elevation = 0f
-        supportActionBar?.title = "Find Your Food Recommendation"
-    }
-
     private fun bottomNav(){
-        binding.navBottom.selectedItemId = R.id.bnmMeal
+        binding.navBottom.selectedItemId = R.id.bnmProfile
         binding.navBottom.isItemHorizontalTranslationEnabled = true
         binding.navBottom.setOnNavigationItemSelectedListener {item ->
             when(item.itemId){
@@ -56,16 +46,16 @@ class MealActivity : AppCompatActivity() {
                     finish()
                 }
 
-                R.id.bnmProgress -> {
-                    val intent = Intent(this, ProgressActivity::class.java)
+                R.id.bnmMeal -> {
+                    val intent = Intent(this, MealActivity::class.java)
                     intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
                     intent.flags = Intent.FLAG_ACTIVITY_NO_ANIMATION
                     startActivity(intent)
                     finish()
                 }
 
-                R.id.bnmProfile -> {
-                    val intent = Intent(this, ProfileActivity::class.java)
+                R.id.bnmProgress -> {
+                    val intent = Intent(this, ProgressActivity::class.java)
                     intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
                     intent.flags = Intent.FLAG_ACTIVITY_NO_ANIMATION
                     startActivity(intent)
@@ -74,14 +64,5 @@ class MealActivity : AppCompatActivity() {
             }
             true
         }
-    }
-
-
-    companion object {
-        @StringRes
-        private val TAB_TITLES = intArrayOf(
-            R.string.tab1meal,
-            R.string.tab2meal
-        )
     }
 }

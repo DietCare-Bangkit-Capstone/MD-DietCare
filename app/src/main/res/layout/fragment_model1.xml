@@ -19,7 +19,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/nunito_bold"
-                android:text="Berat Badan"
+                android:text="Body Weight"
                 android:textSize="24sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -39,7 +39,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="numberDecimal"
-                    android:hint="dalam Kg"/>
+                    android:hint="in Kg metric"/>
             </com.google.android.material.textfield.TextInputLayout>
 
             <TextView
@@ -47,7 +47,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/nunito_bold"
-                android:text="Tipe Diet"
+                android:text="Diet Type"
                 android:textSize="24sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -66,7 +66,7 @@
                 <AutoCompleteTextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:hint="Masukkan level diet"
+                    android:hint="Enter the diet level"
                     android:inputType="none"
                     android:id="@+id/ddDietTypeModel1"/>
             </com.google.android.material.textfield.TextInputLayout>
@@ -76,7 +76,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/nunito_bold"
-                android:text="Aktivitas Harian"
+                android:text="Daily Activity"
                 android:textSize="24sp"
                 android:layout_marginTop="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -97,7 +97,7 @@
                     android:layout_height="match_parent"
                     android:id="@+id/ddDailyActivityModel1"
                     android:inputType="none"
-                    android:hint="Masukkan aktivitas harian" />
+                    android:hint="Enter your daily activity" />
             </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -106,8 +106,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/nunito_bold"
-                android:text="Mau makan berapa kali hari ini?"
-                android:textSize="24sp"
+                android:text="How many times do you eat for today?"
+                android:textSize="20sp"
                 android:layout_marginTop="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -126,7 +126,7 @@
                     android:id="@+id/ddMealModel1"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:hint="Masukkan banyak porsi"
+                    android:hint="Enter the number of today's meal plan"
                     android:inputType="none"/>
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -134,7 +134,7 @@
                 android:id="@+id/tvFindRecipeModel1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Yuk, mari makan!"
+                android:text="Come on, let's eat!"
                 android:gravity="center"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -149,7 +149,7 @@
                 android:textSize="15sp"
                 android:layout_margin="10dp"
                 android:fontFamily="@font/nunito_extra_bold"
-                android:text="Cari Resep Diet"
+                android:text="Find Diet Recipes"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"

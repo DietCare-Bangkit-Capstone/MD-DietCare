@@ -28,7 +28,7 @@ class Rec4PagerAdapter(private val recItem : List<DataItem>): RecyclerView.Adapt
                 binding.tvIngridientsItemRecipe.text = tidyIngridient
             }
 
-            val stepArray = data.recipeInstructions?.removeSuffix(")")?.removePrefix("\"")?.removeSuffix("\"")?.split("\", \"")?.toTypedArray()
+            val stepArray = data.recipeInstructions?.removeSuffix(")")?.removePrefix("\"")?.removeSuffix("\"")?.removeSuffix("\"\n")?.replace("\", \n\"", "\", \"")?.split("\", \"")?.toTypedArray()
             if (stepArray != null){
                 var tidyStep = ""
                 for (i in 1..stepArray.size){

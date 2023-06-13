@@ -77,7 +77,7 @@ class MainViewModel (context: Context): ViewModel() {
                 if (response.isSuccessful) {
                     if (response.body() != null) {
                         _listSearch.value = response.body()?.data
-                        if (response.body()?.data ==null){
+                        if (response.body()?.data?.size == 0){
                             _isError.value = true
                         }
                     }

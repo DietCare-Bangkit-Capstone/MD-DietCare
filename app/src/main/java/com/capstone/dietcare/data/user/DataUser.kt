@@ -13,6 +13,9 @@ data class DataUser(
     @ColumnInfo(name = "Date")
     var date : String ?= null,
 
+    @ColumnInfo(name = "DateInMilliSecond")
+    var ms : Long ?= null,
+
     @ColumnInfo(name = "BodyWeight")
     var weight : Double?= null,
 

@@ -8,6 +8,7 @@ import com.bumptech.glide.Glide
 import com.capstone.dietcare.data.remote.ml.DataItem
 import com.capstone.dietcare.databinding.ItemSearchBinding
 import com.capstone.dietcare.detail.DetailActivity
+import com.capstone.dietcare.detail.DetailParcel
 
 class SearchAdapter(private val listSearch : List<DataItem>): RecyclerView.Adapter<SearchAdapter.SearchViewHolder>() {
     class SearchViewHolder (private val binding: ItemSearchBinding): RecyclerView.ViewHolder(binding.root){
@@ -33,7 +34,11 @@ class SearchAdapter(private val listSearch : List<DataItem>): RecyclerView.Adapt
         holder.bind(listSearch[position])
         holder.itemView.setOnClickListener {
             val intent = Intent(holder.itemView.context, DetailActivity::class.java)
-            intent.putExtra("RECIPENAME", listSearch[position].name)
+            val recipeIntent = DetailParcel(
+                listSearch[position].name!!,
+                listSearch[position].calories.toString().toDouble()
+            )
+            intent.putExtra("RECIPE_INTENT", recipeIntent)
             holder.itemView.context.startActivity(intent)
         }
     }

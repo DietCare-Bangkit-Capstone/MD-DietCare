@@ -92,7 +92,7 @@ class Recommendation2Activity : AppCompatActivity() {
 
                 }
             } else{
-                Toast.makeText(this, "Maaf, terdapat kesalahan teknis.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Sorry, an rror occurred. Please do a refresh.", Toast.LENGTH_SHORT).show()
             }
 
         }

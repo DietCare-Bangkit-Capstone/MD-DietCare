@@ -9,6 +9,7 @@ import com.bumptech.glide.Glide
 import com.capstone.dietcare.data.remote.ml.DataItem
 import com.capstone.dietcare.databinding.ItemHomeRecipeBinding
 import com.capstone.dietcare.detail.DetailActivity
+import com.capstone.dietcare.detail.DetailParcel
 
 class RandomRecipeAdapter (private val listRandom : List<DataItem>) : RecyclerView.Adapter<RandomRecipeAdapter.RandomRecipeViewHolder>() {
     class RandomRecipeViewHolder (private val binding: ItemHomeRecipeBinding): RecyclerView.ViewHolder(binding.root) {
@@ -32,7 +33,11 @@ class RandomRecipeAdapter (private val listRandom : List<DataItem>) : RecyclerVi
         holder.bind(listRandom[position])
         holder.itemView.setOnClickListener {
             val intent = Intent(holder.itemView.context, DetailActivity::class.java)
-            intent.putExtra("RECIPENAME", listRandom[position].name)
+            val recipeIntent = DetailParcel(
+                listRandom[position].name!!,
+                listRandom[position].calories.toString().toDouble()
+            )
+            intent.putExtra("RECIPE_INTENT", recipeIntent)
             holder.itemView.context.startActivity(intent)
         }
     }

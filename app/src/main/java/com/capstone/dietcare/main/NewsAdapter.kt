@@ -1,6 +1,7 @@
 package com.capstone.dietcare.main
 
 import android.content.Intent
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat.startActivity
@@ -9,6 +10,8 @@ import com.bumptech.glide.Glide
 import com.capstone.dietcare.data.helper.DateHelper.withNewsDateFormat
 import com.capstone.dietcare.data.remote.news.DataItem
 import com.capstone.dietcare.databinding.ItemNewsBinding
+import com.capstone.dietcare.detail.DetailActivity
+import com.capstone.dietcare.main.webview.WebviewActivity
 
 class NewsAdapter(private val itemNews : List<DataItem>): RecyclerView.Adapter<NewsAdapter.NewsViewHolder>() {
     class NewsViewHolder (private val binding: ItemNewsBinding): RecyclerView.ViewHolder(binding.root){
@@ -26,6 +29,17 @@ class NewsAdapter(private val itemNews : List<DataItem>): RecyclerView.Adapter<N
                 val shareIntent = Intent.createChooser(sendIntent,null)
                 itemView.context.startActivity(shareIntent)
             }
+            itemView.setOnClickListener {
+                val intent = Intent(itemView.context, WebviewActivity::class.java)
+                intent.putExtra("NEWS_LINK", news.link)
+                itemView.context.startActivity(intent)
+            }
+            binding.icBrowseNews.setOnClickListener {
+                val intent = Intent(Intent.ACTION_VIEW)
+                intent.data = Uri.parse(news.link)
+                itemView.context.startActivity(intent)
+            }
+
         }
 
     }

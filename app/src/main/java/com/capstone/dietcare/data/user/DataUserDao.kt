@@ -11,6 +11,9 @@ interface DataUserDao {
     @Query("SELECT * from DataUser ORDER BY id DESC")
     fun getAllMeal(): LiveData<List<DataUser>>
 
+    @Query("SELECT * from DataUser WHERE Calories > 20 ORDER BY id ASC")
+    fun getAllCalData(): LiveData<List<DataUser>>
+
     @Query("SELECT * FROM DATAUSER ORDER BY id DESC LIMIT 1")
     fun getLatestMeal(): LiveData<DataUser>
 
@@ -28,5 +31,14 @@ interface DataUserDao {
 
     @Query("UPDATE DATAUSER SET Meal5Name=:m5name, Meal5Image=:m5img, Meal5Calories =:m5cal, Meal5Time=:m5time, Meal5Portion=:m5port  WHERE ID IN (SELECT ID FROM DataUser ORDER BY ID DESC LIMIT 1)")
     fun updateMeal5(m5name: String?, m5img: String?, m5cal: Double?, m5time:String?, m5port:Double?)
+
+    @Query("SELECT * FROM DataUser WHERE BodyWeight IS NOT NULL ORDER BY id ASC")
+    fun getAllBodyWeight(): LiveData<List<DataUser>>
+
+    @Query("SELECT * FROM DataUser WHERE BodyWeight IS NOT NULL ORDER BY id DESC LIMIT 1")
+    fun getLatestBodyWeight(): LiveData<DataUser>
+
+    @Query("DELETE FROM DataUser WHERE id = :id")
+    fun delete(id: Int)
 
 }

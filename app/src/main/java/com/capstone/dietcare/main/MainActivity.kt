@@ -17,6 +17,8 @@ import com.capstone.dietcare.favorite.FavoriteActivity
 import com.capstone.dietcare.history.HistoryActivity
 import com.capstone.dietcare.main.search.SearchActivity
 import com.capstone.dietcare.meal.MealActivity
+import com.capstone.dietcare.profile.ProfileActivity
+import com.capstone.dietcare.progress.ProgressActivity
 import com.google.android.material.snackbar.Snackbar
 
 class MainActivity : AppCompatActivity() {
@@ -54,6 +56,7 @@ class MainActivity : AppCompatActivity() {
             override fun onQueryTextSubmit(query: String): Boolean {
                 val intent = Intent(this@MainActivity, SearchActivity::class.java)
                 intent.putExtra("SEARCHITEM", query)
+                intent.flags = Intent.FLAG_ACTIVITY_NO_ANIMATION
                 startActivity(intent)
                 searchView.clearFocus()
                 return true
@@ -132,11 +135,19 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 R.id.bnmProgress -> {
-
+                    val intent = Intent(this, ProgressActivity::class.java)
+                    intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
+                    intent.flags = Intent.FLAG_ACTIVITY_NO_ANIMATION
+                    startActivity(intent)
+                    finish()
                 }
 
                 R.id.bnmProfile -> {
-
+                    val intent = Intent(this, ProfileActivity::class.java)
+                    intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
+                    intent.flags = Intent.FLAG_ACTIVITY_NO_ANIMATION
+                    startActivity(intent)
+                    finish()
                 }
             }
             true

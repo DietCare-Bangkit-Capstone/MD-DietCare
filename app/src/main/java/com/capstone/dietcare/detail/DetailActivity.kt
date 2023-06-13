@@ -1,5 +1,6 @@
 package com.capstone.dietcare.detail
 
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -11,6 +12,7 @@ import com.capstone.dietcare.data.favorite.FavoriteData
 import com.capstone.dietcare.data.helper.ViewModelFactory
 import com.capstone.dietcare.data.remote.ml.DataItem
 import com.capstone.dietcare.databinding.ActivityDetailBinding
+import com.capstone.dietcare.recommendation.RecIntent
 import com.google.android.material.snackbar.Snackbar
 import com.google.gson.JsonObject
 
@@ -46,11 +48,16 @@ class DetailActivity : AppCompatActivity() {
     }
 
     private fun setupInitial() {
-        val recipe = intent.getStringExtra("RECIPENAME")
+        val recipe = if (Build.VERSION.SDK_INT >= 33) {
+            intent.getParcelableExtra("RECIPE_INTENT", DetailParcel::class.java)
+        } else {
+            @Suppress("DEPRECATION")
+            intent.getParcelableExtra("RECIPE_INTENT")
+        }
         if (recipe != null){
             val name = JsonObject()
-            name.addProperty("Name", recipe)
-            detailViewModel.postDetail(name)
+            name.addProperty("Name", recipe.name.replace("(", "\\(").replace(")", "\\)"))
+            detailViewModel.postDetail(name, recipe.name, recipe.cal)
             detailViewModel.itemSearch.observe(this){
                 setDetail(it)
             }
@@ -77,7 +84,7 @@ class DetailActivity : AppCompatActivity() {
             binding.tvIngridientsItemRecipe.text = tidyIngridient
         }
 
-        val stepArray = it?.recipeInstructions?.removeSuffix(")")?.removePrefix("\"")?.removeSuffix("\"")?.split("\", \"")?.toTypedArray()
+        val stepArray = it?.recipeInstructions?.removeSuffix(")")?.removePrefix("\"")?.removeSuffix("\"")?.removeSuffix("\"\n")?.replace("\", \n\"", "\", \"")?.split("\", \"")?.toTypedArray()
         if (stepArray != null){
             var tidyStep = ""
             for (i in 1..stepArray.size){

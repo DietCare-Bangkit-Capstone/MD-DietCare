@@ -14,6 +14,7 @@ import com.capstone.dietcare.data.helper.DateHelper
 import com.capstone.dietcare.data.user.DataUser
 import com.capstone.dietcare.databinding.FragmentModel1Binding
 import com.capstone.dietcare.recommendation.RecommendationActivity
+import java.util.*
 
 class Model1Fragment : Fragment() {
 
@@ -42,10 +43,10 @@ class Model1Fragment : Fragment() {
 
         binding.btnFindRecipeModel1.setOnClickListener {
             when {
-                binding.edtWeight.text == null -> binding.edtWeight.error = "Masukkan berat badan"
-                binding.ddDietTypeModel1.text == null -> binding.ddDietTypeModel1.error = "Masukkan level diet"
-                binding.ddDailyActivityModel1.text == null -> binding.ddDailyActivityModel1.error = "Masukkan aktivitas harian"
-                binding.ddMealModel1.text == null -> binding.ddMealModel1.error = "Masukkan berapa banyak porsi hari ini"
+                binding.edtWeight.text == null -> binding.edtWeight.error = "Enter your body weight"
+                binding.ddDietTypeModel1.text == null -> binding.ddDietTypeModel1.error = "Enter the level of diet"
+                binding.ddDailyActivityModel1.text == null -> binding.ddDailyActivityModel1.error = "Enter your daily activity"
+                binding.ddMealModel1.text == null -> binding.ddMealModel1.error = "Enter the number of servings for the day"
                 else -> {
                     var dietType : Double = 0.0
                     when {
@@ -71,6 +72,7 @@ class Model1Fragment : Fragment() {
                     val data = DataUser()
                     data.let {
                         it.date = DateHelper.getCurrentDate()
+                        it.ms = Date().time
                         it.meal = binding.ddMealModel1.text.toString().toInt()
                         it.weight = binding.edtWeight.text.toString().toDouble()
                         it.calor = calModel1

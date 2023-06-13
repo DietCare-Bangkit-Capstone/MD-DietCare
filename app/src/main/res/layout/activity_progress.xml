@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".progress.ProgressActivity">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/navBottom">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp">
+            <TextView
+                android:id="@+id/tvDateWeight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="Recent data body weight : You didn't have any data, please input it on get recommendation or profile update."
+                android:textSize="16sp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <TextView
+                android:id="@+id/tvBmiTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Your BMI"
+                android:layout_marginTop="20dp"
+                android:textStyle="bold"
+                android:textSize="28sp"
+                app:layout_constraintTop_toBottomOf="@id/tvDateWeight"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textColor="@color/green_500"/>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cvBMIUser"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="20dp"
+                app:layout_constraintTop_toBottomOf="@id/tvBmiTitle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="10dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+                    <TextView
+                        android:id="@+id/tvBmiUser"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="0.0 kg/m²"
+                        android:gravity="center"
+                        android:fontFamily="@font/nunito_extra_bold"
+                        android:textSize="35sp"/>
+
+                    <TextView
+                        android:id="@+id/tvBmiType"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="No Data"
+                        android:textStyle="bold"
+                        android:textSize="28sp"
+                        android:gravity="center"/>
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/tvRangeBmi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Healthy BMI range: 18.5 kg/m² - 25 kg/m²"
+                app:layout_constraintTop_toBottomOf="@id/cvBMIUser"
+                android:layout_marginTop="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:id="@+id/tvRangeBmiUser"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Healthy weight: 0 kg - 0 kg"
+                app:layout_constraintTop_toBottomOf="@id/tvRangeBmi"
+                android:layout_marginTop="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:id="@+id/tvBmitoIdeal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Lose X kg more to reach the BMI ideal of 25 kg/m²"
+                android:gravity="center"
+                android:fontFamily="@font/nunito_bold"
+                app:layout_constraintTop_toBottomOf="@id/tvRangeBmiUser"
+                android:layout_marginTop="15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tvProgressTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Your Weight Progress"
+                android:layout_marginTop="20dp"
+                android:textStyle="bold"
+                android:textSize="28sp"
+                app:layout_constraintTop_toBottomOf="@id/tvBmitoIdeal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textColor="@color/green_500"/>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cvWeightProgress"
+                android:layout_width="match_parent"
+                android:layout_height="320dp"
+                app:cardCornerRadius="20dp"
+                app:layout_constraintTop_toBottomOf="@id/tvProgressTitle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_margin="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="15dp">
+                    <com.github.mikephil.charting.charts.LineChart
+                        android:id="@+id/lcProgressChart"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"/>
+
+                    <TextView
+                        android:id="@+id/tvWeighttoLastDiff"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Lose X kg from your last data"
+                        android:gravity="center"/>
+                    <TextView
+                        android:id="@+id/tvWeighttoFirstDiff"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Lose X kg from your first progress"
+                        android:gravity="center"/>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/tvHintInputData"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="*Update the weight data by get the food recommendation or update on your profile"
+                android:textSize="10sp"
+                android:layout_marginTop="15dp"
+                android:textStyle="italic"
+                app:layout_constraintTop_toBottomOf="@id/cvWeightProgress"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <TextView
+                android:id="@+id/tvCaloriesTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Your Calories History"
+                android:layout_marginTop="20dp"
+                android:textStyle="bold"
+                android:textSize="28sp"
+                app:layout_constraintTop_toBottomOf="@id/tvHintInputData"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textColor="@color/green_500"/>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cvCaloriesProgress"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                app:cardCornerRadius="20dp"
+                app:layout_constraintTop_toBottomOf="@id/tvCaloriesTitle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_margin="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="15dp">
+                    <com.github.mikephil.charting.charts.LineChart
+                        android:id="@+id/lcCaloriesChart"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"/>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/navBottom"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
+        android:background="?android:attr/windowBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/bottom_nav_menu"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

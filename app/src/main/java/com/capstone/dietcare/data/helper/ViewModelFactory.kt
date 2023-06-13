@@ -8,6 +8,7 @@ import com.capstone.dietcare.favorite.FavoriteViewModel
 import com.capstone.dietcare.history.HistoryViewModel
 import com.capstone.dietcare.main.MainViewModel
 import com.capstone.dietcare.meal.MealViewModel
+import com.capstone.dietcare.progress.ProgressViewModel
 import com.capstone.dietcare.recommendation.RecViewModel
 
 class ViewModelFactory private constructor( private val context: Context) : ViewModelProvider.NewInstanceFactory(){
@@ -41,6 +42,8 @@ class ViewModelFactory private constructor( private val context: Context) : View
                 return DetailViewModel(context) as T }
             modelClass.isAssignableFrom(FavoriteViewModel::class.java) ->{
                 return FavoriteViewModel(context) as T }
+            modelClass.isAssignableFrom(ProgressViewModel::class.java) ->{
+                return ProgressViewModel(context) as T }
             else -> throw java.lang.IllegalArgumentException("Unknown ViewModel class: ${modelClass.name}")
         }
     }

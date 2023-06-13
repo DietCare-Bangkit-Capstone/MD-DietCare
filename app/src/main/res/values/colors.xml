@@ -7,4 +7,12 @@
     <color name="lemon">#F9F871</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="bmi_severe_thinness">#ff4242</color>
+    <color name="bmi_moderate_thinness">#ff8989</color>
+    <color name="bmi_mild_thinness">#fde143</color>
+    <color name="bmi_normal">#85e62c</color>
+    <color name="bmi_overweight">#fde143</color>
+    <color name="bmi_obese1">#ff8989</color>
+    <color name="bmi_obese2">#ff4242</color>
+    <color name="bmi_obese3">#8e0000</color>
 </resources>
