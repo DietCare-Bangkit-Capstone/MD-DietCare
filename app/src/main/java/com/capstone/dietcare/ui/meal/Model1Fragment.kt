@@ -65,10 +65,10 @@ class Model1Fragment : Fragment() {
 
         binding.btnFindRecipeModel1.setOnClickListener {
             when {
-                binding.edtWeight.text == null -> binding.edtWeight.error = "Enter your body weight"
-                binding.ddDietTypeModel1.text == null -> binding.ddDietTypeModel1.error = "Enter the level of diet"
-                binding.ddDailyActivityModel1.text == null -> binding.ddDailyActivityModel1.error = "Enter your daily activity"
-                binding.ddMealModel1.text == null -> binding.ddMealModel1.error = "Enter the number of servings for the day"
+                binding.edtWeight.text.isNullOrEmpty()-> binding.edtWeight.error = "Enter your body weight"
+                binding.ddDietTypeModel1.text.isNullOrEmpty() -> binding.ddDietTypeModel1.error = "Enter the level of diet"
+                binding.ddDailyActivityModel1.text.isNullOrEmpty() -> binding.ddDailyActivityModel1.error = "Enter your daily activity"
+                binding.ddMealModel1.text.isNullOrEmpty() -> binding.ddMealModel1.error = "Enter the number of servings for the day"
                 else -> {
                     var dietType : Double = 0.0
                     when {
@@ -95,7 +95,8 @@ class Model1Fragment : Fragment() {
                     mealViewModel.itemUser.observe(requireActivity()){
                         when (it?.sex?.uppercase()){
                             "MALE" -> {
-                                var calModel1 : Double = (10.0 * binding.edtWeight.text.toString().toDouble() + 6.25 * it?.height.toString().toDouble() - 5 * DateHelper.getAge(it.birthdate!!) + 5)*dailyAct - dietType
+                                var calModel1 : Double = (10.0 * binding.edtWeight.text.toString().toDouble() + 6.25 * it?.height.toString().toDouble() - 5 * DateHelper.getAge(it?.birthdate!!) + 5)*dailyAct - dietType
+
                                 val data = DataUser()
                                 data.let {
                                     it.date = DateHelper.getCurrentDate()
