@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="192dp" />
+
+    <TextView
+        android:id="@+id/tvTitleBirthDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Date of birth"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/tvUserBirthdate"
+        app:layout_constraintTop_toTopOf="@id/tvUserBirthdate"
+        app:layout_constraintBottom_toBottomOf="@id/tvUserBirthdate"
+        android:layout_marginEnd="8dp"/>
+
+    <TextView
+        android:id="@+id/tvUserBirthdate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvUserAge"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text=""
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/tvUserBirthdate"
+        app:layout_constraintStart_toStartOf="@+id/tvUserBirthdate"
+        app:layout_constraintTop_toBottomOf="@+id/tvUserBirthdate" />
+
+    <TextView
+        android:id="@+id/tvTitleAge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Age"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvUserAge"
+        app:layout_constraintEnd_toStartOf="@+id/tvUserAge"
+        app:layout_constraintTop_toTopOf="@+id/tvUserAge" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvUserSex"
+        android:text=""
+        android:textSize="18sp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/tvUserAge"
+        app:layout_constraintStart_toStartOf="@+id/tvUserAge"
+        app:layout_constraintTop_toBottomOf="@+id/tvUserAge" />
+
+    <TextView
+        android:id="@+id/tvTitleSaturFat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sex"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@id/tvUserSex"
+        app:layout_constraintTop_toTopOf="@id/tvUserSex"
+        app:layout_constraintBottom_toBottomOf="@id/tvUserSex"
+        android:layout_marginEnd="8dp"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvUserHeight"
+        android:text=""
+        android:textSize="18sp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/tvUserSex"
+        app:layout_constraintStart_toStartOf="@+id/tvUserSex"
+        app:layout_constraintTop_toBottomOf="@+id/tvUserSex" />
+
+    <TextView
+        android:id="@+id/tvTitleHeight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Body Height"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@id/tvUserHeight"
+        app:layout_constraintTop_toTopOf="@id/tvUserHeight"
+        app:layout_constraintBottom_toBottomOf="@id/tvUserHeight"
+        android:layout_marginEnd="8dp"/>
+
+    <TextView
+        android:id="@+id/tvTitleWeight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Body Weight"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/tvUserWeight"
+        app:layout_constraintTop_toTopOf="@id/tvUserWeight"
+        app:layout_constraintBottom_toBottomOf="@id/tvUserWeight"
+        android:layout_marginEnd="8dp"/>
+
+    <TextView
+        android:id="@+id/tvUserWeight"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="18sp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="@id/tvUserHeight"
+        app:layout_constraintStart_toStartOf="@id/tvUserHeight"
+        app:layout_constraintTop_toBottomOf="@id/tvUserHeight"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

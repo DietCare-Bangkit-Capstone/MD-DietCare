@@ -3,13 +3,14 @@ package com.capstone.dietcare.data.helper
 import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.capstone.dietcare.detail.DetailViewModel
-import com.capstone.dietcare.favorite.FavoriteViewModel
-import com.capstone.dietcare.history.HistoryViewModel
-import com.capstone.dietcare.main.MainViewModel
-import com.capstone.dietcare.meal.MealViewModel
-import com.capstone.dietcare.progress.ProgressViewModel
-import com.capstone.dietcare.recommendation.RecViewModel
+import com.capstone.dietcare.ui.detail.DetailViewModel
+import com.capstone.dietcare.ui.favorite.FavoriteViewModel
+import com.capstone.dietcare.ui.history.HistoryViewModel
+import com.capstone.dietcare.ui.main.MainViewModel
+import com.capstone.dietcare.ui.meal.MealViewModel
+import com.capstone.dietcare.ui.profile.ProfileViewModel
+import com.capstone.dietcare.ui.progress.ProgressViewModel
+import com.capstone.dietcare.ui.recommendation.RecViewModel
 
 class ViewModelFactory private constructor( private val context: Context) : ViewModelProvider.NewInstanceFactory(){
     companion object{
@@ -44,6 +45,8 @@ class ViewModelFactory private constructor( private val context: Context) : View
                 return FavoriteViewModel(context) as T }
             modelClass.isAssignableFrom(ProgressViewModel::class.java) ->{
                 return ProgressViewModel(context) as T }
+            modelClass.isAssignableFrom(ProfileViewModel::class.java) ->{
+                return ProfileViewModel(context) as T }
             else -> throw java.lang.IllegalArgumentException("Unknown ViewModel class: ${modelClass.name}")
         }
     }

@@ -3,28 +3,27 @@
     <item
         android:id="@+id/bnmHome"
         android:icon="@drawable/ic_home"
-        android:title="Beranda" />
+        android:title="Home" />
 
     <item
         android:id="@+id/bnmHistory"
         android:icon="@drawable/ic_history"
-        android:title="Histori" />
+        android:title="History" />
 
     <item
-        android:id="@+id/bnmMeal"
-        android:icon="@drawable/ic_meal"
-        android:title="Makan" />
+        android:id="@+id/bnmNone"
+        android:title="" />
 
 
     <item
         android:id="@+id/bnmProgress"
         android:icon="@drawable/ic_progress"
-        android:title="Progres" />
+        android:title="Progress" />
 
     <item
         android:id="@+id/bnmProfile"
         android:icon="@drawable/ic_profile_pic"
-        android:title="Profil" />
+        android:title="Profile" />
 
 
 </menu>

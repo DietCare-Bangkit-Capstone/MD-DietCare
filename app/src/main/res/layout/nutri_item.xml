@@ -13,7 +13,7 @@
         app:layout_constraintGuide_begin="120dp" />
 
     <TextView
-        android:id="@+id/tvTitleCalories"
+        android:id="@+id/tvTitleBirthDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Calories"

@@ -14,52 +14,71 @@
         android:theme="@style/Theme.DietCare"
         tools:targetApi="31">
         <activity
-            android:name=".profile.ProfileActivity"
-            android:exported="false" />
-        <activity
-            android:name=".main.webview.WebviewActivity"
-            android:exported="false" />
-        <activity
-            android:name=".progress.ProgressActivity"
-            android:exported="false" />
-        <activity
-            android:name=".favorite.FavoriteActivity"
-            android:exported="false" />
-        <activity
-            android:name=".detail.DetailActivity"
-            android:exported="false" />
-        <activity
-            android:name=".main.search.SearchActivity"
-            android:exported="false" />
-        <activity
-            android:name=".history.HistoryActivity"
-            android:exported="false" />
-        <activity
-            android:name=".recommendation.Recommendation5Activity"
-            android:exported="false" />
-        <activity
-            android:name=".recommendation.Recommendation4Activity"
-            android:exported="false" />
-        <activity
-            android:name=".recommendation.Recommendation3Activity"
-            android:exported="false" />
-        <activity
-            android:name=".recommendation.Recommendation2Activity"
-            android:exported="false" />
-        <activity
-            android:name=".recommendation.RecommendationActivity"
-            android:exported="false" />
-        <activity
-            android:name=".meal.MealActivity"
-            android:exported="false" />
-        <activity
-            android:name=".main.MainActivity"
+            android:name=".ui.SplashScreenActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.auth.RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.auth.LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.profile.DeleteProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.profile.UpdatePasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.profile.UpdateProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.profile.ProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.main.webview.WebviewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.progress.ProgressActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.favorite.FavoriteActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.detail.DetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.main.search.SearchActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.history.HistoryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.recommendation.Recommendation5Activity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.recommendation.Recommendation4Activity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.recommendation.Recommendation3Activity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.recommendation.Recommendation2Activity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.recommendation.RecommendationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.meal.MealActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.main.MainActivity"
+            android:exported="true">
         </activity>
     </application>
 

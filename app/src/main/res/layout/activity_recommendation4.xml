@@ -4,9 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".recommendation.Recommendation4Activity">
+    tools:context=".ui.recommendation.Recommendation4Activity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_pager"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <me.relex.circleindicator.CircleIndicator3
@@ -43,6 +44,42 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_done"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Recommendation Success!"
+                android:fontFamily="@font/nunito_extra_bold"
+                android:textSize="24sp"
+                android:layout_margin="10dp"
+                android:gravity="center"/>
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/anim_done"
+                android:layout_width="250dp"
+                android:layout_height="250dp"
+                app:lottie_rawRes="@raw/anim_success"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="false"/>
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_error"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 

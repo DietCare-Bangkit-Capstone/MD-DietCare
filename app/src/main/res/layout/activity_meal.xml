@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".meal.MealActivity">
+    android:clipChildren="false"
+    tools:context=".ui.meal.MealActivity">
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cvTabMeal"
@@ -44,14 +45,55 @@
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/navBottom"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="0dp"
-        android:layout_marginEnd="0dp"
-        android:background="?android:attr/windowBackground"
+        android:layout_alignParentBottom="true"
+        android:background="?android:attr/colorPrimary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:menu="@menu/bottom_nav_menu"/>
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/bottom_nav_menu"
+        app:itemIconTint="@color/bottom_nav"
+        app:itemTextColor="@color/bottom_nav"
+        android:clipChildren="false">
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/bnmMeal"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="bottom|center"
+            android:layout_marginBottom="10dp"
+            android:elevation="0dp"
+            app:cardElevation="0dp"
+            app:cardMaxElevation="0dp"
+            android:fadingEdgeLength="1dp"
+            app:strokeWidth="10dp"
+            app:strokeColor="?attr/colorPrimary"
+            android:backgroundTint="?attr/colorSecondary"
+            app:cardCornerRadius="25dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="18dp">
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/ic_meal"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Meal"
+                    android:gravity="center"
+                    android:fontFamily="@font/nunito_extra_bold"
+                    android:layout_weight="1"
+                    android:textColor="?attr/colorPrimary"
+                    />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
