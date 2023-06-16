@@ -28,8 +28,8 @@ class ProfileViewModel(context: Context):ViewModel() {
 
     private val mDataUserRepository: DataUserRepository = DataUserRepository(context)
 
-    fun updateBodyWeight (weight: Double, dateTime: Long){
-        mDataUserRepository.updateBodyWeight(weight, dateTime)
+    fun updateBodyWeight (weight: Double, dateTime: Long, date: String){
+        mDataUserRepository.updateBodyWeight(weight, dateTime, date)
     }
 
     fun getUserDetail(email: String){

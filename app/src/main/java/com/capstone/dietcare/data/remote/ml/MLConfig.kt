@@ -16,7 +16,7 @@ class MLConfig {
                 .addInterceptor(loggingInterceptor)
                 .build()
             val retrofit = Retrofit.Builder()
-                .baseUrl("https://yaelahdeck.up.railway.app/")
+                .baseUrl("http://34.101.115.165:5000")
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(client)
                 .build()

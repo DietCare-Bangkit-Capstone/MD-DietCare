@@ -13,6 +13,7 @@ import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
 import androidx.lifecycle.ViewModelProvider
 import com.capstone.dietcare.R
+import com.capstone.dietcare.data.helper.DateHelper
 import com.capstone.dietcare.data.helper.ViewModelFactory
 import com.capstone.dietcare.data.local.login.LoginPreference
 import com.capstone.dietcare.data.local.login.LoginViewModelFactory
@@ -77,7 +78,7 @@ class UpdateProfileActivity : AppCompatActivity(), DatePickerFragment.DialogDate
                         profileViewModel.putUpdate(profileUpdate, login.email)
                         profileViewModel.isError.observe(this){
                             if (!it){
-                                profileViewModel.updateBodyWeight(binding.edtUpdateWeight.text.toString().toDouble(), Date().time)
+                                profileViewModel.updateBodyWeight(binding.edtUpdateWeight.text.toString().toDouble(), Date().time, DateHelper.getCurrentDate())
                                 val intent = Intent(this, ProfileActivity::class.java)
                                 intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
                                 startActivity(intent)

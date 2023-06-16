@@ -41,7 +41,7 @@ interface DataUserDao {
     @Query("DELETE FROM DataUser WHERE id = :id")
     fun delete(id: Int)
 
-    @Query("INSERT INTO DataUser (DateInMilliSecond, BodyWeight) VALUES (:dateTime, :weight)")
-    fun updateBodyWeight(weight: Double?, dateTime : Long)
+    @Query("INSERT INTO DataUser (Date, DateInMilliSecond, BodyWeight) VALUES (:date, :dateTime, :weight)")
+    fun updateBodyWeight(weight: Double?, dateTime : Long, date: String)
 
 }

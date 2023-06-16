@@ -31,8 +31,8 @@ class DataUserRepository (context: Context){
         executorService.execute { mDataUserDao.delete(id) }
     }
 
-    fun updateBodyWeight(weight: Double, dateTime: Long){
-        executorService.execute { mDataUserDao.updateBodyWeight(weight, dateTime) }
+    fun updateBodyWeight(weight: Double, dateTime: Long, date : String){
+        executorService.execute { mDataUserDao.updateBodyWeight(weight, dateTime, date) }
     }
 
     fun getLatestBodyWeight(): LiveData<DataUser> = mDataUserDao.getLatestBodyWeight()

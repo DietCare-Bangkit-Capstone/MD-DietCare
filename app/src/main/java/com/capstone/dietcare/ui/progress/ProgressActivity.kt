@@ -134,9 +134,9 @@ class ProgressActivity : AppCompatActivity() {
                 binding.tvWeighttoFirstDiff.visibility = View.VISIBLE
                 if (lastWeight != null && firstWeight != null){
                     if (lastWeight!! > firstWeight!!){
-                        binding.tvWeighttoFirstDiff.text = "Gain ${BigDecimal(lastWeight.minus(firstWeight)).setScale(2, RoundingMode.HALF_UP)} kg from your first progress"
+                        binding.tvWeighttoFirstDiff.text = "Gained ${BigDecimal(lastWeight.minus(firstWeight)).setScale(2, RoundingMode.HALF_UP)} kg from your first progress"
                     }else{
-                        binding.tvWeighttoFirstDiff.text = "Lose ${BigDecimal(firstWeight.minus(lastWeight)).setScale(2, RoundingMode.HALF_UP)} kg from your first progress"
+                        binding.tvWeighttoFirstDiff.text = "Lost ${BigDecimal(firstWeight.minus(lastWeight)).setScale(2, RoundingMode.HALF_UP)} kg from your first progress"
                     }
                 }
             }
@@ -148,9 +148,9 @@ class ProgressActivity : AppCompatActivity() {
                 binding.tvWeighttoFirstDiff.visibility = View.VISIBLE
                 if (lastWeight != null && firstWeight != null){
                     if (lastWeight!! > firstWeight!!){
-                        binding.tvWeighttoFirstDiff.text = "Gain ${BigDecimal(lastWeight.minus(firstWeight)).setScale(2, RoundingMode.HALF_UP)} kg from your first progress"
+                        binding.tvWeighttoFirstDiff.text = "Gained ${BigDecimal(lastWeight.minus(firstWeight)).setScale(2, RoundingMode.HALF_UP)} kg from your first progress"
                     }else{
-                        binding.tvWeighttoFirstDiff.text = "Lose ${BigDecimal(firstWeight.minus(lastWeight)).setScale(2, RoundingMode.HALF_UP)} kg from your first progress"
+                        binding.tvWeighttoFirstDiff.text = "Lost ${BigDecimal(firstWeight.minus(lastWeight)).setScale(2, RoundingMode.HALF_UP)} kg from your first progress"
                     }
                 }
 
@@ -158,9 +158,9 @@ class ProgressActivity : AppCompatActivity() {
                 Log.d("bedabanget", "${secLastWeight}")
                 if (lastWeight != null && secLastWeight != null){
                     if (lastWeight!! > secLastWeight!!){
-                        binding.tvWeighttoLastDiff.text = "Gain ${BigDecimal(lastWeight.minus(secLastWeight)).setScale(2, RoundingMode.HALF_UP)} kg from your last data"
+                        binding.tvWeighttoLastDiff.text = "Gained ${BigDecimal(lastWeight.minus(secLastWeight)).setScale(2, RoundingMode.HALF_UP)} kg from your last data"
                     }else{
-                        binding.tvWeighttoLastDiff.text = "Lose ${BigDecimal(secLastWeight.minus(lastWeight)).setScale(2, RoundingMode.HALF_UP)} kg from your last data"
+                        binding.tvWeighttoLastDiff.text = "Lost ${BigDecimal(secLastWeight.minus(lastWeight)).setScale(2, RoundingMode.HALF_UP)} kg from your last data"
                     }
                 }
             }
